@@ -14,7 +14,11 @@ DESCRIPTION
     timestamp="137131200", nonce="dj83hs9s",
     signature="kDZvddkndxvhGRXZhvuDjEWhGeE="
 
-    Use the signature to pass your sessionid
+    In order for Catalyst::Plugin::Session to work, Use the mac signature to
+    pass your sessionid, and the session data needs to be stored on the
+    server.
+
+    Note that this pre-alpha version has no way to rewrite outgoing data.
 
 METHODS
 BUGS
@@ -25,7 +29,7 @@ SEE ALSO
 AUTHOR
     Warachet Samtalee (zdk)
 
-    This module is derived from CCatalyst::Plugin::Session::State::URI code.
+    This module is derived from Catalyst::Plugin::Session::State::URI code.
 
 COPYRIGHT & LICENSE
     Copyright 2011 the above author(s).
