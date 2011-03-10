@@ -6,6 +6,5 @@ MANIFEST.SKIP~
 cover_db
 Makefile$
 Makefile.old$
-^Catalyst-Plugin-Session-State-Auth-
+^catalyst-plugin-session-state-auth-
 ^.gitignore
-
