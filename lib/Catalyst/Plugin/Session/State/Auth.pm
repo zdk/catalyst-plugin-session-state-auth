@@ -5,7 +5,7 @@ use HTTP::Headers::Util qw(split_header_words);
 
 use namespace::clean -except => 'meta';
 
-our $VERSION = '0.0002';
+our $VERSION = '0.0004';
 
 extends 'Catalyst::Plugin::Session::State';
 with 'MooseX::Emulate::Class::Accessor::Fast';
@@ -70,8 +70,8 @@ Authorization: MAC token="h480djs93hd8",
                    nonce="dj83hs9s",
                    signature="kDZvddkndxvhGRXZhvuDjEWhGeE="
 
-In order for L<Catalyst::Plugin::Session> to work, 
-Use the mac signature to pass your sessionid, 
+In order for L<Catalyst::Plugin::Session> to work,
+Use the mac signature to pass your sessionid,
 and the session data needs to be stored on the server.
 
 Note that this pre-alpha version has no way to rewrite outgoing data.
