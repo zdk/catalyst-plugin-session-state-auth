@@ -7,9 +7,11 @@ use Module::Install::AuthorTests;
 name 'Catalyst-Plugin-Session-State-Auth';
 all_from 'lib/Catalyst/Plugin/Session/State/Auth.pm';
 
+requires 'namespace::clean';
+requires 'MRO::Compat';
 requires 'Moose';
+requires 'MooseX::Emulate::Class::Accessor::Fast';
 requires 'Catalyst::Plugin::Session';
-requires 'namespace::autoclean';
 
 build_requires 'Catalyst::Runtime' => '5.80015';
 build_requires 'Test::WWW::Mechanize::Catalyst';
