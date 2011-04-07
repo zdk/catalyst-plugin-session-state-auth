@@ -1,2 +1,7 @@
-0.0001 - Initial release.
-0.0002 - Fix pod description and synopsis.
+Revision history for Catalyst::Plugin::Session::State::Auth
+
+
+0.0002-0.0005  17/03/2011
+              - Fix pod description and synopsis.
+0.0001         09/03/2011
+              - Initial release.
