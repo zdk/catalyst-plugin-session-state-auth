@@ -51,28 +51,31 @@ __END__
 
 =head1 NAME
 
-Catalyst::Plugin::Session::State::Auth -
-Use signature in HTTP MAC authentication scheme to pass the session id between requests
+Catalyst::Plugin::Session::State::Auth - Use HTTP Auth MAC signature for session id
 
 =head1 SYNOPSIS
-    In MyApp.pm
-    use Catalyst qw/
-      Session
-      Session::State::Auth
-      Session::Store::Foo
-      /;
+
+  # In MyApp.pm
+  use Catalyst qw/
+    Session
+    Session::State::Auth
+    Session::Store::Foo
+    /;
 
 =head1 DESCRIPTION
 
-In your HTTP request
-Authorization: MAC token="h480djs93hd8",
-                   timestamp="137131200",
-                   nonce="dj83hs9s",
-                   signature="kDZvddkndxvhGRXZhvuDjEWhGeE="
+Allows L<Catalyst::Plugin::Session> to use the HTTP Request MAC authentication
+scheme to pass the session id between requests.
 
-In order for L<Catalyst::Plugin::Session> to work,
-Use the mac signature to pass your sessionid,
-and the session data needs to be stored on the server.
+For a HTTP request containing the Authorization header
+
+  Authorization: MAC token="h480djs93hd8",
+                     timestamp="137131200",
+                     nonce="dj83hs9s",
+                     signature="kDZvddkndxvhGRXZhvuDjEWhGeE="
+
+The MAC signature is used as the sessionid. The session data needs to be stored
+on the server.
 
 Note that this pre-alpha version has no way to rewrite outgoing data.
 
@@ -82,7 +85,7 @@ Note that this pre-alpha version has no way to rewrite outgoing data.
 
 =head1 SEE ALSO
 
-L<Catalyst>, L<Catalyst::Plugin::Session>,L<Catalyst::Plugin::Session::State::URI>.
+L<Catalyst>, L<Catalyst::Plugin::Session>, L<Catalyst::Plugin::Session::State::URI>.
 
 =head1 AUTHOR
 
